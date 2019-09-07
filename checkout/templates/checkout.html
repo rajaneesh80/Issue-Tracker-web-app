@@ -1,0 +1,92 @@
+{% extends "base.html" %} 
+{% load static from staticfiles %} 
+{% load bootstrap4 %} 
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  //<![CDATA[
+  Stripe.publishableKey = '{{ publishable }}';
+  //]]>
+</script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="review-order" style="background-color: #DEE1FA; 
+							  padding: 20px 40px;
+							  margin-bottom: 20px;
+							  width: 95%;
+							  margin-right: auto;
+							  margin-left: auto;">
+  <h3 class="review-order-title">Review your order</h3>
+  <div class="row">
+    <div class="card" id="cart-card">
+      <table class="table table-hover shopping-cart-wrap">
+        <thead class="text-muted">
+          <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        {% for item in cart_items %} {% csrf_token %}
+        <tbody>
+          <tr>
+            <td>
+              <div class="product-wrap">
+                <div class="product-list">
+                  <h6 class="product-title">Name: {{ item.issue.name }}</h6>
+                  <dl class="param param-inline">
+                    <dt>Description: </dt>
+                    <dd>{{ item.issue.description }}</dd>
+                  </dl>
+                  <dl class="param param-inline">
+                    <dt>Posted by: </dt>
+                    <dd>{{ item.issue.created_by }}</dd>
+                  </dl>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="price-wrap">
+                <var class="price">{{ item.issue.price }}</var>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="total-wrapper">
+      <p class="total-text"> Total </p>
+      <p class="total-price"><i class="fas fa-euro-sign"></i>{{ total }}</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="payment-wrapper">
+      <div class="row">
+        <div class="offset-md-3 col-md-12 my-4">
+          <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+            <h5 class="payment-details">Payment Details</h5>
+            <div id="credit-card-errors" style="display:none">
+              <div class="alert-message block-message error" id="stripe-error-message"></div>
+            </div>
+            <div class="form-group col-md-6">
+              {% bootstrap_form order_form %}
+            </div>
+            <div class="form-group col-md-6">
+              {% bootstrap_form payment_form %}
+            </div>
+            {% csrf_token %}
+            <div class="form-group col-md-12">
+              <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
