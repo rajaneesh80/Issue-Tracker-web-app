@@ -41,15 +41,15 @@
     <ul class="navbar-nav mr-auto">
 
 
-    {# % if user.is_authenticated % # }
+    {% if user.is_authenticated %}
 
       <li class="nav-item active">
-      <a class="nav-link" href=""><span class="sr-only">(current)</span> LogOut </a>
+      <a class="nav-link" href="{% url 'logout' %}"><span class="sr-only">(current)</span> LogOut </a>
       </li>
 
       
        <li class="nav-item active">
-       <a class="nav-link" href="">Edit Profile <span class="sr-only">
+       <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile <span class="sr-only">
           (current)</a>
       </li>
 
@@ -65,23 +65,24 @@
 
       <li class="nav-item active"> <!-- Cart -->
           <a class="nav-link" href=""> <i class="fas fa-shopping-cart icon-nav"> </i> Cart
-          {#% if issue_count > 0 %#}
+          {# % if issue_count > 0 % #}
           <label class="badge badge-warning">{{ issue_count }}</label>
-          {#% endif %#}
+          {# % endif % #}
         </a>
       </li>
 
-    {#% else %#}
-      <li class="nav-item active">
-      <a class="nav-link" href=""><span class="sr-only">(current)</span> Login </a>
-      </li>
+    {% else %}
 
-      <li class="nav-item active">
-      <a class="nav-link" href="">Sign UP <span class="sr-only">(current)</span></a>
-      </li>
+    <li class="nav-item active">
+    <a class="nav-link" href="{% url 'login' %}"><span class="sr-only">(current)</span> Login </a>
+    </li>
+
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'signup' %}">Sign UP <span class="sr-only">(current)</span></a>
+    </li>
 
 
-    {#% endif %#}
+    {% endif %}
 
     </ul>
 
