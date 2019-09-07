@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'issue',
     'bootstrap4',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #'cart.contexts.cart_contents',
+                'cart.contexts.cart_contents',
             ],
         },
     },

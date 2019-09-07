@@ -64,10 +64,10 @@
       </li>
 
       <li class="nav-item active"> <!-- Cart -->
-          <a class="nav-link" href=""> <i class="fas fa-shopping-cart icon-nav"> </i> Cart
-          {# % if issue_count > 0 % #}
+          <a class="nav-link" href="{% url 'view_cart' %}"> <i class="fas fa-shopping-cart icon-nav"> </i> Cart
+          {% if issue_count > 0 %}
           <label class="badge badge-warning">{{ issue_count }}</label>
-          {# % endif % #}
+          {% endif %}
         </a>
       </li>
 
@@ -87,7 +87,7 @@
     </ul>
 
   
-    <form class="form-inline" id="form-search" action="#" method ="GET">
+    <form class="form-inline" id="form-search" action="" method ="GET">
       {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>

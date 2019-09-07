@@ -1,0 +1,126 @@
+{% extends 'base.html' %} 
+
+{% load bootstrap4 %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+   <div class="card shopping-cart">
+            <div class="card-header bg-dark text-light">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                Shipping cart
+                
+            </div>
+
+            <div class="card-body">
+                    <!-- PRODUCT -->
+                    <div class="row">
+
+                       {% for item in cart_items %}
+
+                      <!-- -->
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+
+                          <h4 class="product-name"><strong>Product Name</strong></h4>
+                            <h4>
+                                <small> {{ item.issue.name }} </small>
+                            </h4>
+                              
+                        </div>
+                       <!-- -->
+
+                       <!-- -->
+
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+                            <h4 class="product-name"><strong>Product Name</strong></h4>
+                            <h4>
+                                <small> {{ item.issue.name }} </small>
+                            </h4>
+                        </div>
+
+                        <!-- -->
+
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+
+                            <h4 class="product-name"><strong>Product Name </strong> </h4>
+                            <h4>
+                                <small> {{ item.issue.name }} </small>
+                            </h4>
+                        </div>
+                    
+                           <!-- -->
+
+                            <!-- -->
+
+                        <div class="col-12 col-sm-12 col-md-2 text-center">
+
+                            <h4 class="product-name"><strong>Product price </strong> </h4>
+                            <h4>
+                                <small> {{ item.price  }} </small>
+                            </h4>
+                        </div>
+                    
+                           <!-- -->
+                           <!-- -->
+                      
+            <p>
+                
+                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">Qty</div>
+                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                            <div class="input-group-addon">{{item.quantity}}</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                </form>
+            </p>
+
+                <!-- -->
+                 <!-- -->
+                      <div class="col-12 col-sm-12 col-md-2 text-center">
+                          
+                          <div class="pull-right" style="margin: 5px">
+                            Total price: <b>{{total}}€</b>
+                           </div>
+                      </div>
+
+                       {% endfor %}
+                    </div> <!-- #row -->
+                    <hr>
+                    <hr>
+                    <!-- END PRODUCT -->
+
+                    <!-- PRODUCT -->
+                  
+                    
+                    <!-- END PRODUCT -->
+
+
+            <div class="card-footer py-5">
+
+                <div class="pull-right" style="margin: 10px">
+                    <a href="#" class="btn btn-success pull-right">Checkout</a>
+                    <div class="pull-right" style="margin: 5px">
+                        Total price: <b>{{ total }}€</b>
+                    </div>
+                </div>
+            </div> <!-- card-footer -->
+
+        </div>  <!-- shoping card-->
+</div> <!-- card-->
+
+<br>
+<br>
+<hr>
+
+
+
+
+{% endblock %}

@@ -43,7 +43,7 @@
         {% endif %}
         {% if issue.varieties == issue.FEATURE %}
           {% if issue.status == issue.TODO and issue.DOING %}
-          <form method="POST" action="">
+          <form method="POST" action="{% url 'add_to_cart' issue.id %}">
             {% csrf_token %} 
             <div class="input-group">
                 <button class="btn btn-outline-success"  id="btn-add-to-cart" type="submit">Add to cart</button>
