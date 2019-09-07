@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -26,12 +25,13 @@ def add_to_cart(request, id):
 ##############################################################
 
 def adjust_cart(request, id):
-	"""Add a quantity to cart"""
-	quantity=int(request.POST.get('quantity'))
-	cart = request.session.get('cart', {})
-	cart[id] = cart.get(id, quantity)
-	request.session['cart'] = cart
-	return redirect(reverse('issues'))
+    """Add a quantity to cart"""
+    quantity=int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+    cart[id] = cart.get(id, quantity)
+    messages.success(request, 'Cart Amended! Plz go to cart again & checkout')
+    request.session['cart'] = cart
+    return redirect(reverse('issues'))
 
 
 
