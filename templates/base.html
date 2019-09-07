@@ -44,13 +44,13 @@
     {% if user.is_authenticated %}
 
       <li class="nav-item active">
-      <a class="nav-link" href="{% url 'logout' %}"><span class="sr-only">(current)</span> LogOut </a>
+      <a class="nav-link" href="{% url 'logout' %}"><span class="sr-only">(current)</span> <i class="fas fa-sign-out-alt icon-nav"> </i> LogOut </a>
       </li>
 
       
-       <li class="nav-item active">
-       <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile <span class="sr-only">
-          (current)</a>
+      <li class="nav-item active">
+       <a class="nav-link" href="{% url 'edit_profile' %}"> <i class="fa fa-user icon-nav"></i> Edit_Profile <span class="sr-only">
+          (current) </a>
       </li>
 
       <li class="nav-item active">
@@ -59,8 +59,8 @@
       </li>
 
         <li class="nav-item active">
-       <a class="nav-link" href="{% url 'my_issues' %}">My_Issues <span class="sr-only">
-          (current)</a>
+       <a class="nav-link" href="{% url 'my_issues' %}"> <i class="fa fa-user icon-nav"></i> My_Issues <span class="sr-only">
+          (current) </a>
       </li>
 
       <li class="nav-item active"> <!-- Cart -->
@@ -74,11 +74,11 @@
     {% else %}
 
     <li class="nav-item active">
-    <a class="nav-link" href="{% url 'login' %}"><span class="sr-only">(current)</span> Login </a>
+    <a class="nav-link" href="{% url 'login' %}"><span class="sr-only">(current)</span> <i class="fas fa-sign-in-alt icon-nav"> </i> Login </a>
     </li>
 
     <li class="nav-item active">
-      <a class="nav-link" href="{% url 'signup' %}">Sign UP <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="{% url 'signup' %}"> <i class="fa fa-sign-up icon-nav"> </i>Sign UP <span class="sr-only">(current)</span></a>
     </li>
 
 
@@ -90,7 +90,7 @@
     <form class="form-inline" id="form-search" action="{% url 'search:searchResult' %}" method ="GET">
       {% csrf_token %}
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="q">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-sign-out icon-nav"> </i> Search </button>
     </form>
 
 
