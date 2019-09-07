@@ -103,7 +103,24 @@ WSGI_APPLICATION = 'issuetracker.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+if "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+else:
+    print("Database URL not found. Using postgres instead")
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'issuetracker',
+            'USER':'postgres',
+            'PASSWORD':'YumiUK100',
+            'HOST':'localhost',
+            'PORT':'5432',
+        }
+    }
+
+
+#DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
