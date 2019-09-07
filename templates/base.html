@@ -10,22 +10,17 @@
   <meta name="author" content="">
 
 
-  <title> Issues_app </title>
+  <title> Raj_Issuestracker </title>
 
   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap  and Fontawesome core CSS -->
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <link href="{% static 'open-iconic/font/css/open-iconic-bootstrap.css' %}" rel="stylesheet">
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  
 </head>
 
 <body>
@@ -46,51 +41,52 @@
     <ul class="navbar-nav mr-auto">
 
 
-    {% if user.is_authenticated %}
+    {# % if user.is_authenticated % # }
+
       <li class="nav-item active">
-      <a class="nav-link" href="{% url 'logout' %}"><span class="sr-only">(current)</span> LogOut </a>
+      <a class="nav-link" href=""><span class="sr-only">(current)</span> LogOut </a>
       </li>
 
       
        <li class="nav-item active">
-       <a class="nav-link" href="{% url 'edit_profile' %}">Edit Profile <span class="sr-only">
+       <a class="nav-link" href="">Edit Profile <span class="sr-only">
           (current)</a>
       </li>
 
       <li class="nav-item active">
-       <a class="nav-link" href="{% url 'issues' %}"> All_Issues <span class="sr-only">
+       <a class="nav-link" href=""> All_Issues <span class="sr-only">
           (current)</a>
       </li>
 
         <li class="nav-item active">
-       <a class="nav-link" href="{% url 'my_issues' %}">My_Issues <span class="sr-only">
+       <a class="nav-link" href="">My_Issues <span class="sr-only">
           (current)</a>
       </li>
 
       <li class="nav-item active"> <!-- Cart -->
-          <a class="nav-link" href="{% url 'view_cart' %}"> <i class="fas fa-shopping-cart icon-nav"> </i> Cart
-          {% if issue_count > 0 %}
+          <a class="nav-link" href=""> <i class="fas fa-shopping-cart icon-nav"> </i> Cart
+          {#% if issue_count > 0 %#}
           <label class="badge badge-warning">{{ issue_count }}</label>
-          {% endif %}
+          {#% endif %#}
         </a>
       </li>
 
-    {% else %}
+    {#% else %#}
       <li class="nav-item active">
-      <a class="nav-link" href="{% url 'login' %}"><span class="sr-only">(current)</span> Login </a>
+      <a class="nav-link" href=""><span class="sr-only">(current)</span> Login </a>
       </li>
 
       <li class="nav-item active">
-      <a class="nav-link" href="{% url 'signup' %}">Sign UP <span class="sr-only">(current)</span></a>
+      <a class="nav-link" href="">Sign UP <span class="sr-only">(current)</span></a>
       </li>
 
 
-    {% endif %}
+    {#% endif %#}
 
     </ul>
 
   
-    <form class="form-inline" id="form-search" action="{% url 'search_app:searchResult' %}" method ="GET">
+    <form class="form-inline" id="form-search" action="#" method ="GET">
       {% csrf_token %}
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> Search </button>
@@ -122,30 +118,26 @@
     </div>
  
 
-<!--
-  <footer class="text-muted">
+<!-- -->
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
-     <a class="navbar-brand" href="#">
-      <img src="{% static 'img/logo.png' %}" height=30 width=30 class="d-inline-block alighn-top" />
-      Brand 
-      </a>
+<!-- FOOTER -->
+<footer id="main-footer" class="text-center p-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
 
+              <a href="#"> <i class="fab fa-facebook-square fa-2x"> </i> </a>
+              <a href="#"> <i class="fab fa-youtube fa-2x"> </i> </a>
+              <a href="#"> <i class="fab fa-twitter-square fa-2x"></i> </a>
+              <a href="#"> <i class="fab fa-linkedin fa-2x"></i> </a>
 
-      <div class="text-inline my-2 my-lg-0">
-      
-      <div class="text text-outline-success my-2 my-sm-0 container text-center"> 
-
-        <spam> Have a happy {% now "Y" %} </spam>
-
-   </div>
-    </div>
-  
-</nav>
-
- </footer>
-
--->
+            <p> &copy;
+              <span id="year"></span> Raj-issue-tracker </p>
+          </div>
+        </div>
+      </div>
+</footer>
+<!-- FOOTER End-->
 
   <!-- Bootstrap core JavaScript -->
 
@@ -157,6 +149,12 @@
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
 integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+  // Get the current year for the copyright
+  $('#year').text(new Date().getFullYear());
+</script>
+
 
 </body>
 </html>
