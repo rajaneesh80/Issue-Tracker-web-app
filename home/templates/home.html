@@ -7,9 +7,9 @@
 {% block content %}
 <div class = "container">
 	
-<h6> You are logged in as {{ user.username }} </h6>
+<h6 class = "text-center"> You are logged in as {{ user.username }} </h6>
 
-<h3> hello from Django !!!!! !6 </h3>
+<h3 class = "text-center"> Hello from Raj-Issuetracking app </h3>
 </div>
 
 {% if user.is_authenticated %}
@@ -19,5 +19,48 @@
 	<p>Email: {{ user.email }}</p>
 	
 {% endif %}
+
+
+<!-- ICON BOXES -->
+  <section id="icon-boxes" class="p-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class=""></i>
+              <h3> New features! </h3>
+              <P> Features cost only €100 per person and will be implemented when at least 3 users show interest within 15-20 days. If not, we your money.
+              </P>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-dark text-white text-center">
+            <div class="card-body">
+              <i class=""></i>
+              <h3> Bugs we fixed free!</h3>
+              <P> We'll do our best to fix all the bugs in a popularity order. So make sure to upvote for the ones that you may be experiencing too! </P>
+           
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card bg-danger text-white text-center">
+            <div class="card-body">
+              <i class=""></i>
+              <h3>Helpful Community!</h3>
+              <p>
+                  Our community is active are you willing to help! Don't forget to share to grow our community.
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+<!-- ICON BOXES End -->
 
 {% endblock %}
