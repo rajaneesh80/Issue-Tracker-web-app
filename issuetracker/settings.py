@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['raj-issuetracker.herokuapp.com']
 
-#ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
