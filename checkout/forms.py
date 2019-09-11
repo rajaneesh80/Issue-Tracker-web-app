@@ -19,3 +19,4 @@ class OrderForm(forms.ModelForm):
             'town_or_city', 'street_address1', 'street_address2',
             'county'
         )
+

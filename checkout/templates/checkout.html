@@ -1,6 +1,7 @@
 {% extends "base.html" %} 
 {% load static from staticfiles %} 
 {% load bootstrap4 %} 
+
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
@@ -50,7 +51,7 @@
             </td>
             <td>
               <div class="price-wrap">
-                <var class="price">{{ item.issue.price }}</var>
+                <var class="price">{{ item.price }}</var>
               </div>
             </td>
           </tr>
@@ -69,6 +70,7 @@
     <div class="payment-wrapper">
       <div class="row">
         <div class="offset-md-3 col-md-12 my-4">
+
           <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
             <h5 class="payment-details">Payment Details</h5>
             <div id="credit-card-errors" style="display:none">
@@ -85,6 +87,7 @@
               <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Submit Payment">
             </div>
           </form>
+
         </div>
       </div>
     </div>

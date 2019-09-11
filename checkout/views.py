@@ -27,9 +27,23 @@ def checkout(request):
             total = 0
             for id, quantity in cart.items():
                 issue = get_object_or_404(Issue, pk=id)
-                if issue.price is not None:
-                    total += quantity * issue.price
-                
+
+                ######################
+                # total += quantity * issue.price
+                ######################
+
+                ######### hard coded the price ############
+
+                total += quantity * 100
+
+                #####################
+
+                ## Nishant ##
+
+                # if issue.price is not None:
+                #     total += quantity * issue.price
+
+                #################
                 order_line_item = OrderLineItem(
                     order = order,
                     issue = issue,
