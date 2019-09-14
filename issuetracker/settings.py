@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
-import env
+import os sys
+# import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,9 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['raj-issuetracker.herokuapp.com']
+ALLOWED_HOSTS = ['raj-issuetracker.herokuapp.com']
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -108,11 +108,38 @@ WSGI_APPLICATION = 'issuetracker.wsgi.application'
 
 #################################################
 
-if "DATABASE_URL" in os.environ:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+# if "DATABASE_URL" in os.environ:
+#     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+# else:
+#     print("Database URL not found. Using postgres instead")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'issuetracker',
+#             'USER':'postgres',
+#             'PASSWORD':'YumiUK100',
+#             'HOST':'localhost',
+#             'PORT':'5432',
+#         }
+#     }
+
+
+#################################################
+
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        },
+    }
+
+elif "DATABASE_URL" in os.environ:
+    DATABASES = {'default': dj_database_url.parse(os.getenv('DATABASE_URL')) }
 
 else:
-    print("Database URL not found. Using postgres instead")
+    print("Database URL not found. Using SQLite instead")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -121,11 +148,10 @@ else:
             'PASSWORD':'YumiUK100',
             'HOST':'localhost',
             'PORT':'5432',
-        }
+        },
     }
 
-
-#################################################
+##############################################
 
 #DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
