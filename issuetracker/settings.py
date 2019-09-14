@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'search',
     'storages',
     'stripe',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -224,4 +225,14 @@ MEDIA_URL = '/media/'
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+## Password -Reset #####
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+
+############################################################

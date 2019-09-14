@@ -6,6 +6,9 @@ from django.contrib import auth
 from django.contrib import messages
 from .forms import SignUpForm, EditProfileForm
 
+#from django.core.urlresolvers import reverse_lazy
+#from django.contrib.auth import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
+
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -71,3 +74,6 @@ def change_password(request):
     
     context = {'form': form}
     return render(request, 'accounts/change_password.html', context)
+
+
+## Password -Reseet URL'S #####
