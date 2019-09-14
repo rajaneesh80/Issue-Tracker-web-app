@@ -14,11 +14,10 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 @login_required   
 def my_issues(request):
 
-    #issue_list = Issue.objects.all().order_by('-created_date')
-
     m_issues = Issue.objects.filter(created_by=request.user).order_by('-created_at')
 
-    # Pagination settings
+    # Pagination settings##
+
     page = request.GET.get('page', 1)
     paginator = Paginator(m_issues, 10)
     
@@ -38,12 +37,12 @@ def my_issues(request):
 @login_required
 def all_issues(request):
 
-    #issue_list = Issue.objects.all().order_by('-created_date')
 
     allissues = Issue.objects.all().order_by('-created_at')
     comments = Comment.objects.all()
 
-    # Pagination settings
+    # Pagination settings ##
+
     page = request.GET.get('page', 1)
     paginator = Paginator(allissues, 10)
     
@@ -88,18 +87,23 @@ def edit_issue(request, pk):
         form = IssueForm(instance=issue)
     return render(request, 'issue/issueform.html', {'form': form})
 
+################ ###########################
+
 def delete_issue(request, pk):
     issue = get_object_or_404(Issue, pk=pk)
     issue.delete()
     return redirect(my_issues)
 
+################ ###########################
+
 @login_required   
-def upvote(request, pk):
-    issue = Issue.objects.get(pk=pk)
-    issue.upvotes += 1
-    issue.save()
-    messages.success(request, 'Upvoted successfully!')
-    return redirect('get_detail', pk)
+def upvote(request, issue_id):
+    if request.method == 'POST':
+        issue = get_object_or_404(Issue, pk=issue_id)
+        issue.upvotes += 1
+        issue.save()
+        messages.success(request, 'Upvoted successfully!')
+        return redirect('/issue/' +str(issue.id))
 
 
   ################ ###########################

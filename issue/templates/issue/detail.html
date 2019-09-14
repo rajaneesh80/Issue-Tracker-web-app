@@ -17,31 +17,36 @@
         <button type="button" class="list-group-item list-group-item-action">Description: {{ issue.description }}</button>
         <button type="button" class="list-group-item list-group-item-action">Created by: {{ issue.created_by }}</button>
         <button type="button" class="list-group-item list-group-item-action">Created at: {{ issue.created_at }}</button>
+
         <button type="button" class="list-group-item list-group-item-action">
-          Upvotes: {{ issue.upvotes }} 
-          <a href="{% url 'upvote' issue.id %}">
-            <i class="fas fa-thumbs-up" id="upvote"></i>
-          </a>
-        </button> 
+          <a href="javascript:{document.getElementById('up').submit()}">
+          <i class="fas fa-thumbs-up" id="upvote"></i>
+           Upvotes: {{ issue.upvotes }} </a>
+         </button> 
+
         {% if issue.status == issue.TODO %}
           <button type="button" class="list-group-item list-group-item-action">
             Status: 
             <span class="badge badge-pill badge-primary">{{ issue.status }}</span>
           </button> 
-        {% endif %} 
+        {% endif %}
+
         {% if issue.status == issue.DOING %}
           <button type="button" class="list-group-item list-group-item-action">
             Status: 
             <span class="badge badge-pill badge-info">{{ issue.status }}</span>
           </button> 
-        {% endif %} 
+        {% endif %}
+
         {% if issue.status == issue.DONE %}
           <button type="button" class="list-group-item list-group-item-action">
             Status:
             <span class="badge badge-pill badge-success">{{ issue.status }}</span>
           </button>
         {% endif %}
+
         {% if issue.varieties == issue.FEATURE %}
+        
           {% if issue.status == issue.TODO and issue.DOING %}
           <form method="POST" action="{% url 'add_to_cart' issue.id %}">
             {% csrf_token %} 
@@ -71,6 +76,11 @@
   {% endfor %}
   </div>
 </div>
+
+<form id="up" method="POST" action="{% url 'upvote' issue.id %}">
+  {% csrf_token%}
+  <input type="hidden">
+</form>
 
 {% endblock %}
 
