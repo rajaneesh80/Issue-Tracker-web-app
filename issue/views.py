@@ -1,22 +1,63 @@
+import os
+import requests
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Issue, Comment
 from .forms import IssueForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
  ############# issue #######################
 
 @login_required   
 def my_issues(request):
-    m_issues = Issue.objects.filter(created_by=request.user)
+
+    #issue_list = Issue.objects.all().order_by('-created_date')
+
+    m_issues = Issue.objects.filter(created_by=request.user).order_by('-created_at')
+
+    # Pagination settings
+    page = request.GET.get('page', 1)
+    paginator = Paginator(m_issues, 10)
+    
+    try:
+        issues = paginator.page(page)
+        
+    except PageNotAnInteger:
+        
+        issues = paginator.page(1)
+        
+    except EmptyPage:
+        
+        issues = paginator.page(paginator.num_pages)
+
     return render(request, "issue/myissues.html", {'m_issues': m_issues})
     
 @login_required
 def all_issues(request):
-    allissues = Issue.objects.all()
+
+    #issue_list = Issue.objects.all().order_by('-created_date')
+
+    allissues = Issue.objects.all().order_by('-created_at')
     comments = Comment.objects.all()
+
+    # Pagination settings
+    page = request.GET.get('page', 1)
+    paginator = Paginator(allissues, 10)
+    
+    try:
+        issues = paginator.page(page)
+        
+    except PageNotAnInteger:
+        
+        issues = paginator.page(1)
+        
+    except EmptyPage:
+        
+        issues = paginator.page(paginator.num_pages)
+
     return render(request, 'issue/issues.html', {'issues': allissues}, {'comments': comments})
 
 

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import env
+import env
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,9 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['raj-issuetracker.herokuapp.com']
+# ALLOWED_HOSTS = ['raj-issuetracker.herokuapp.com']
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -106,6 +106,8 @@ WSGI_APPLICATION = 'issuetracker.wsgi.application'
 #     }
 # }
 
+#################################################
+
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
@@ -123,7 +125,11 @@ else:
     }
 
 
+#################################################
+
 #DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+
+################################################# Data base end ################
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
