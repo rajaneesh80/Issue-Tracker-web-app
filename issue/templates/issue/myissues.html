@@ -67,7 +67,7 @@
             <div class="btn-group" role="group" aria-label="Third group">
             {% if issue.varieties == issue.FEATURE %}
               {% if issue.status == issue.TODO and issue.DOING %}
-              <form method="POST" action="#">
+              <form method="POST" action="{% url 'add_to_cart' issue.id %}">
               {% csrf_token %} 
                 <button class="btn btn-outline-success" type="submit" style="margin-left: 8px;">Add to cart</button>
               {% endif %}
@@ -83,7 +83,7 @@
   {% endfor %} 
 </div>
 
-<div class="pagination">
+<div class="pagination justify-content-center">
 
   {% if m_issues.has_previous %}
     <a class="pagination-action" href="?page=1">
