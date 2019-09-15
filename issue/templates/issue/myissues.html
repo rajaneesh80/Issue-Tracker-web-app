@@ -4,11 +4,13 @@
 
 {% block content %}
 <div class="container">
-  <i class="fas fa-user" id="user-i"></i><h6 class="user-logged">You are logged in as {{ user.username }} </h6>
+  <i class="fas fa-user" id="user-i"> </i> <h5 class="user-logged"> Hello {{ user.username }} </h5>
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-title">My Issues</h1>
-      <a href="{% url 'new_issue' %}" class="btn btn-primary" id="btn-add-issue">Add</a>
+      <h2 class="page-title">My Issues</h2>
+      <a href="{% url 'new_issue' %}" class="btn btn-primary" id="btn-add-issue"> 
+      <i class="fas fa-plus"> </i>
+      Add New Issue </a>
     </div>
   </div>
   {% for issue in m_issues %}
