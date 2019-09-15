@@ -22,15 +22,15 @@ def my_issues(request):
     paginator = Paginator(m_issues, 10)
     
     try:
-        issues = paginator.page(page)
+        m_issues = paginator.page(page)
         
     except PageNotAnInteger:
         
-        issues = paginator.page(1)
+        m_issues = paginator.page(1)
         
     except EmptyPage:
         
-        issues = paginator.page(paginator.num_pages)
+        m_issues = paginator.page(paginator.num_pages)
 
     return render(request, "issue/myissues.html", {'m_issues': m_issues})
     
@@ -47,15 +47,15 @@ def all_issues(request):
     paginator = Paginator(allissues, 10)
     
     try:
-        issues = paginator.page(page)
+        allissues = paginator.page(page)
         
     except PageNotAnInteger:
         
-        issues = paginator.page(1)
+        allissues = paginator.page(1)
         
     except EmptyPage:
         
-        issues = paginator.page(paginator.num_pages)
+        allissues = paginator.page(paginator.num_pages)
 
     return render(request, 'issue/issues.html', {'issues': allissues}, {'comments': comments})
 
