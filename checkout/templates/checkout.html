@@ -29,6 +29,7 @@
           <tr>
             <th scope="col">Product</th>
             <th scope="col">Price</th>
+            <th scope="col">Qty</th>
           </tr>
         </thead>
         {% for item in cart_items %} {% csrf_token %}
@@ -54,6 +55,11 @@
                 <var class="price">{{ item.price }}</var>
               </div>
             </td>
+            <td>
+              <div class="price-wrap">
+                <var class="price">{{item.quantity}}</var>
+              </div>
+          </td>
           </tr>
           {% endfor %}
         </tbody>
@@ -62,7 +68,7 @@
   </div>
   <div class="row">
     <div class="total-wrapper">
-      <p class="total-text"> Total </p>
+      <p class="total-text"> Total To Pay </p>
       <p class="total-price"><i class="fas fa-euro-sign"></i>{{ total }}</p>
     </div>
   </div>
