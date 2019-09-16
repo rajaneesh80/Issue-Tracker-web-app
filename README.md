@@ -218,14 +218,14 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
  <h4> Create, Read, Update and Delete Issues:-</h4>
 
-	 <strong> Create: </strong>
+	Create:
 
     * Left name and description fields blank > Output: 'Please Fill out this field'. (Passed)
     * Entered a name, description and selected the type of issue (which is by default a bug, so it will never be blank) > Output: 'New issue created successfully!'. (Passed)
     * When a new issue is created, the issue is saved in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
     * Issue is also displayed on 'All Issues' page.
 
- 	<strong> Read </strong>
+ 	Read:
 
 	<strong> Edit Issue: </strong>
 
@@ -234,19 +234,19 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
     * When an issue is edited, the issue is saved is updated in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
     * Issue is also displayed on 'All Issues' page. (Passed)
 
-   <strong> Delete Issue: </strong>
+    Delete Issue:
 
     * When clicking on Delete button the issue is deleted from the database, and from the pages 'My Issues' and 'All Issues'. (Passed)
 
 <h4> Create and Update Comments:-</h4>
 
- <strong> Create Comment: </strong>
+  	Create Comment
     * Clicked on the button 'Comment' > Brings to another page with a form. (Passed)
     * Left the input field blank > 'Please Fill out this field'. (Passed)
     * Entered a comment. The comment is saved in the database, and the page is redirected to the previous page where the comment is displayed with the username, date and time. (Passed)
 
- <strong> Edit a Comment: </strong>
- 
+ 	Edit a Comment:
+
     * Clicked on the button 'Edit' > Brings to another page with a form. (Passed)
     * Left the input field blank > 'Please Fill out this field'. (Passed)
     * Entered a new comment > Back to details page, comment saved. (Passed)
