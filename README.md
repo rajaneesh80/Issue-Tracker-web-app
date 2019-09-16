@@ -91,6 +91,8 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <li> User Profile </li>
 
+<li> User Edit Personal details </li>
+
 <li> Search bar </li>
 
 <li> Full CRUD functionality </li>
