@@ -201,19 +201,29 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
  <h4> Login page:-</h4>
 
     * Left username and password required fields blank > Output: 'Please Fill out this field'. (Passed)
+
     * Entered a non existent username > Output: 'Your username or password are incorrect'. (Passed)
+
     * Entered a wrong password > Output: 'Your username or password are incorrect'. (Passed)
+
     * Entered a correct username and password > Output: 'You have successfully logged in'. (Passed)
 
 <h4> Registration page:-</h4>
 
     * Left username, email address, password and password confirmation > Output: 'Please Fill out this field'. (Passed)
+
     * Entered a username not allowed. < Output: 'Enter a valid username. This value may contain only English letters, numbers, and @/./+/-/_ characters.'
+
     * Tried to log in without providing an email address > Output: 'Email addresses must be unique.' (Passed)
+
     * Entered an email address without @ > Output: 'Please include an @ in the email address' (Passed)
+
     * Entered an email address already registered > Output: 'Email addresses must be unique'. (Passed)
+
     * Entered an username that already exists > Output: 'A user with that username already exists.' (Passed)
+
     * Entered a wrong password confirmation > Output: 'Passwords do not match'. (Passed)
+
     * Entered correctly an username, email address, password and password confirmation > Output: 'You have successfully logged in'. (Passed)
 
  <h4> Create, Read, Update and Delete Issues:-</h4>
@@ -221,18 +231,24 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 	Create:
 
     * Left name and description fields blank > Output: 'Please Fill out this field'. (Passed)
+
     * Entered a name, description and selected the type of issue (which is by default a bug, so it will never be blank) > Output: 'New issue created successfully!'. (Passed)
+
     * When a new issue is created, the issue is saved in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
-    * Issue is also displayed on 'All Issues' page.
+
+   * Issue is  displayed on 'All Issues'  and My Issue pages.
 
  	Read:
 
-	<strong> Edit Issue: </strong>
+	Edit Issue: 
 
     * Left name and description fields blank > Output: 'Please Fill out this field'. (Passed)
+
     * Entered a different name, description and type of issue > Output: 'Your issue was updated successfully!'. (Passed)
+
     * When an issue is edited, the issue is saved is updated in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
-    * Issue is also displayed on 'All Issues' page. (Passed)
+
+   * Issue is  displayed on 'All Issues'  and My Issue pages.
 
     Delete Issue:
 
@@ -240,31 +256,41 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
 <h4> Create and Update Comments:-</h4>
 
-  	Create Comment
+  	Create Comment:
+
     * Clicked on the button 'Comment' > Brings to another page with a form. (Passed)
+
     * Left the input field blank > 'Please Fill out this field'. (Passed)
+
     * Entered a comment. The comment is saved in the database, and the page is redirected to the previous page where the comment is displayed with the username, date and time. (Passed)
 
  	Edit a Comment:
 
     * Clicked on the button 'Edit' > Brings to another page with a form. (Passed)
+
     * Left the input field blank > 'Please Fill out this field'. (Passed)
+
     * Entered a new comment > Back to details page, comment saved. (Passed)
 
  <h4> Upvote:-</h4>
 
-    * Clicked on the button 'Upvote' the page is redirected to 'Issues' page and displayes the message 'Upvoted successfully!' (Passed)
+    * Clicked on the button 'Upvote' displayes the message 'Upvoted successfully!' (Passed)
+
     * Upvote is saved in the database and displayed in the badge placed in the accordion. (Passed)
-    * The upvoted issue is displayed on the top of the issues that have less upvotes. (Passed)
+
 
 <h4>  Cart :-</h4>
 
     * Clicked on the button 'Add to cart' the page is redirected to 'Issues' page and displays the message 'Feature added to cart'
+
     * Cart page: Feature is added to cart. (Passed)
+
+    * Clicked on Qty box and change the quantity and click the button 'Amend' the page is redirected to 'Issues' page and displays the message 'Cart Amended! Plz go to cart again & checkout.'
 
  <h4> Checkout :-</h4>
 
     * Proceeded with checkout, the product overview is displayed (Passed)
+
     * Proceed with payment by filling out the form and using Stripe's test card number 4242 4242 4242 4242 (Passed)
 
 <hr>
@@ -289,10 +315,9 @@ Rajaneesh Singh Bhadauria - This project was completed as part of Code Institute
 
 <h2> Acknowledgements </h2> 
 
-
-Plus I have used lots other online avilable Django courses on YouTube and online blogs for various Django topics such as AWS S3 integration etc,
-
 The Accounts, Cart and Checkout apps are based upon the sample apps from the User Authentication and Authorisation and Ecommerce mini project components of the Full Stack Frameworks with Django module.
+
+Plus I have used lots other online avilable Django courses on YouTube and online blogs for various Django topics such as Databse design, AWS S3 integration etc,
 
 <hr>
 
