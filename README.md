@@ -5,14 +5,14 @@ Issuetracker
 <hr>
 <h2> Raj_Issuetracking_Web_App </h2>
 
-I used to use Jira at work; we are small team did need such a big app for a small group;
+I used to use Jira at work; we are small team did not need such a big app for a small group;
 maybe in future, I will make this app alternative to Jira for a small team to report the issue and allocate the work in an organization.
 
 <hr>
 
 <h2> Overview </h2>
 
-A web application created in Python 3.7 and Django-version-2.2.5.
+This web application created in Python 3.7 and Django-Version-2.2.5.
 
 <ul>
 
@@ -110,7 +110,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 Python Django-Python framework PostgreSQL database
 Heroku container-based cloud  ervice (PaaS) for deployment
 AWS - S3 to store imaegs and static files 
-HTML5, CSS3 and JavaScript
+HTML5, CSS3 and JavaScript for front end
 Stripe for paymemt 
 Bootstrap CSS framework to style and create responsive design
 other Front end languages that give the application structure, style and interactivity
@@ -218,31 +218,35 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
  <h4> Create, Read, Update and Delete Issues:-</h4>
 
-- <strong> Create: </strong>
+	 <strong> Create: </strong>
+
     * Left name and description fields blank > Output: 'Please Fill out this field'. (Passed)
     * Entered a name, description and selected the type of issue (which is by default a bug, so it will never be blank) > Output: 'New issue created successfully!'. (Passed)
     * When a new issue is created, the issue is saved in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
     * Issue is also displayed on 'All Issues' page.
 
-- <strong> Read
+ 	<strong> Read </strong>
 
-- <strong> Edit Issue: </strong>
+	<strong> Edit Issue: </strong>
+
     * Left name and description fields blank > Output: 'Please Fill out this field'. (Passed)
     * Entered a different name, description and type of issue > Output: 'Your issue was updated successfully!'. (Passed)
     * When an issue is edited, the issue is saved is updated in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
     * Issue is also displayed on 'All Issues' page. (Passed)
 
-- <strong> Delete Issue: </strong>
+   <strong> Delete Issue: </strong>
+
     * When clicking on Delete button the issue is deleted from the database, and from the pages 'My Issues' and 'All Issues'. (Passed)
 
 <h4> Create and Update Comments:-</h4>
 
-- <strong> Create Comment: </strong>
+ <strong> Create Comment: </strong>
     * Clicked on the button 'Comment' > Brings to another page with a form. (Passed)
     * Left the input field blank > 'Please Fill out this field'. (Passed)
     * Entered a comment. The comment is saved in the database, and the page is redirected to the previous page where the comment is displayed with the username, date and time. (Passed)
 
-- <strong> Edit a Comment: </strong>
+ <strong> Edit a Comment: </strong>
+ 
     * Clicked on the button 'Edit' > Brings to another page with a form. (Passed)
     * Left the input field blank > 'Please Fill out this field'. (Passed)
     * Entered a new comment > Back to details page, comment saved. (Passed)
