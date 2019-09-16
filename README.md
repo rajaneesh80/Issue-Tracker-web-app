@@ -68,7 +68,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 <li> Click on the issue that needs to be deleted</li>
 <li> Click on the button 'Delete' </li>
 
-<h3> Buy a featur:: </h3> 
+<h3> Buy a feature:: </h3> 
 <li>  Click on the feature you want to buy </li>
 <li> Click on the button 'Add to cart'</li>
 <li>On the navigation bar click on 'Cart' </li>

@@ -8,5 +8,6 @@ from django.http import HttpResponse
 # 	return HttpResponse("Helllo from Issue_Bug!!")
 
 def home(request):
+	''' View for home page'''
 	return render(request, 'home.html')
 

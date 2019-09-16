@@ -6,10 +6,8 @@ from django.contrib import auth
 from django.contrib import messages
 from .forms import SignUpForm, EditProfileForm
 
-#from django.core.urlresolvers import reverse_lazy
-#from django.contrib.auth import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
-
 def signup(request):
+    """A view manage the new usee registration and redirects back to the home page"""
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -27,6 +25,7 @@ def signup(request):
     return render(request, 'accounts/signup.html',context)
 
 def login_user(request):
+     """A view that manages the login form"""
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -44,11 +43,13 @@ def login_user(request):
 
 
 def logout_user(request):
+    """A view that logs the user out and redirects back to the home page"""
     logout(request)
     messages.success(request, ('You Have Been Logged Out...'))
     return redirect('home')
 
 def edit_profile(request):
+    """A view that help user to change the personal details"""
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
         if form.is_valid():
@@ -62,6 +63,7 @@ def edit_profile(request):
     return render(request, 'accounts/edit_profile.html', context)
 
 def change_password(request):
+    """A view that help user to change the password"""
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)
         if form.is_valid():
@@ -75,5 +77,6 @@ def change_password(request):
     context = {'form': form}
     return render(request, 'accounts/change_password.html', context)
 
+#################################################################################
 
-## Password -Reseet URL'S #####
+

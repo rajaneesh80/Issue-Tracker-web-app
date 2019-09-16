@@ -18,8 +18,6 @@ urlpatterns = [
 	path('<int:issue_id>/upvote/', views.upvote, name='upvote'),
 
 	path('<int:pk>/delete/', views.delete_issue, name='delete_issue'),
-
-
 ]
 
 

@@ -45,6 +45,8 @@
           </button>
         {% endif %}
 
+        <!-- Add to cart  -->
+
         {% if issue.varieties == issue.FEATURE %}
         
           {% if issue.status == issue.TODO and issue.DOING %}
@@ -57,8 +59,9 @@
         {% endif %}
           </form>
       </div>
-    </div>
-  </div>
+    </div> <!-- Wrapper -->
+  </div> <!-- row -->
+
   <div class="card" id="comment-panel">
     <div class="card-header">
       <h4 class="comment-title">Comments</h4>
@@ -74,8 +77,10 @@
       {% endif %}
     </div>
   {% endfor %}
-  </div>
-</div>
+  </div>  <!-- card -->
+</div> <!-- container -->
+
+<!-- upvote form -->
 
 <form id="up" method="POST" action="{% url 'upvote' issue.id %}">
   {% csrf_token%}
