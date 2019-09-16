@@ -281,28 +281,6 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 Rajaneesh Singh Bhadauria - This project was completed as part of Code Institute’s Mentored Online Full Stack Web Development course in 2019.
 </p>
 
-<h2> Content </h2> 
-
-<h2> Media </h2> 
-
-<ul>
-
-<li> The images used in this site were obtained from: <a href="" rel="nofollow"> .com/ </a> </li>
-
-</ul>
-
-<h2> Content </h2> 
-
-<ul>
-
-<li>
-
-The content for  was taken from the <a href=""> Jira </a>
-
-</li>
-
-</ul>
-
 <h2> Acknowledgements </h2> 
 
 
