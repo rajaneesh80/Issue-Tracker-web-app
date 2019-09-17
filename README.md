@@ -33,12 +33,12 @@ This web application created in Python 3.7 and Django-Version-2.2.5.
 <h2> UX </h2>
 
 This website was created with the intention to create user report the issuees.
-Details of the UX design is available in the 'Wire-Frame' folder. 
+Details of the UX design is available in the 'FSE Project Design' folder. 
 This document outlines how I approached the design of the user interface of the main pages of the web application.
 
 <h3> __User Profile Page: Navigation bar > My Issues__ </h3>
 
-The My Issue page shows the user's username, the issues the user added and its details.
+The My Issue page shows the user's icon & username, and all the issues the user added and its details.
 
 It also allows users to perform CRUD (Create, Read, Update and Delete) on any issue.  
 
@@ -46,29 +46,32 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h3> View details about the issues added: </h3> 
 
-<li> Click on the issue you want to read about </li>
+<li> Click on the issue hyperlink if any authenticated user want to read about </li>
 
 <h3> Adding an issue:: </h3> 
+
 <li> Click on the button 'Add Issue' </li>
 <li> Fill out the form </li>
 
 <h3> __User Edit Profile Page: Navigation bar > Edit Profile __ </h3>
 
-<h3> Editing an username , first and last name, email, change password:: </h3> 
+<h3> Editing an username , first and last name, email, change password </h3> 
 <li> User can change username , first and last name,  </li>
-<li> User can change email if its not all ready registered  </li>
-<li> User can change password by cliking the  provided hyper link</li>
+<li> User can change email if its not allready registered  </li>
+<li> User can change password by cliking the  provided hyper link </li>
 
-<h3> Editing an issue:: </h3> 
+<h3> Editing an issue: </h3> 
+
 <li> Click on the issue that needs to be edited </li>
 <li> Click on the button 'Edit' </li>
 <li> Fill out the form </li>
 
-<h3> Deleting an issue:: </h3> 
+<h3> Deleting an issue: </h3> 
+
 <li> Click on the issue that needs to be deleted</li>
 <li> Click on the button 'Delete' </li>
 
-<h3> Buy a feature:: </h3> 
+<h3> Buy a feature: </h3> 
 <li>  Click on the feature you want to buy </li>
 <li> Click on the button 'Add to cart'</li>
 <li>On the navigation bar click on 'Cart' </li>
@@ -87,7 +90,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h2> Features </h2> 
 
-<li> User authentication - Register, Login, Logout </li>
+<li> User authentication - Signup, Login, Logout </li>
 
 <li> User Profile </li>
 
@@ -97,7 +100,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <li> Full CRUD functionality </li>
 
-<li> E-commerce </li>
+<li> e-Commerce </li>
 
 <h3> A demo of this site is available:- <a href="https://raj-issuetracker.herokuapp.com/" rel="nofollow">here</a> </h3> 
 
@@ -111,7 +114,7 @@ Python Django-Python framework PostgreSQL database
 Heroku container-based cloud  ervice (PaaS) for deployment
 AWS - S3 to store imaegs and static files 
 HTML5, CSS3 and JavaScript for front end
-Stripe for paymemt 
+Stripe for paymemts
 Bootstrap CSS framework to style and create responsive design
 other Front end languages that give the application structure, style and interactivity
 
@@ -194,9 +197,9 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
 4.  Testing ecommerce functionality: generating order transactions with Add to Cart, Checkout and payments with Stripe test card details.
 
-5. Testing image upload to AWS S3 bucket.
+5. Testing images upload to AWS S3 bucket.
 
-<h3> All the user functionality  testing has also been undertaken:-</h3>
+<h3> All the User functionality  testing has also been undertaken:-</h3>
 
  <h4> Login page:-</h4>
 
@@ -225,6 +228,13 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
     * Entered a wrong password confirmation > Output: 'Passwords do not match'. (Passed)
 
     * Entered correctly an username, email address, password and password confirmation > Output: 'You have successfully logged in'. (Passed)
+
+<h4> Forgot Password:-</h4>
+
+    * if the user forgot the password they can use the forget the hyper password link and fill the form in instruction will be sent to the provided email to reset the password.
+
+     * I have tested on my email some time email provider blocks it because of security issue.
+
 
  <h4> Create, Read, Update and Delete Issues:-</h4>
 
