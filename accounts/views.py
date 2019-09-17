@@ -25,7 +25,7 @@ def signup(request):
     return render(request, 'accounts/signup.html',context)
 
 def login_user(request):
-     """A view that manages the login form"""
+    """A view that manages the login form"""
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
