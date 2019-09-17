@@ -246,7 +246,7 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
     * When a new issue is created, the issue is saved in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
 
-   * Issue is  displayed on 'All Issues'  and My Issue pages.
+<h4> Issue is  displayed on 'All Issues'  and My Issue pages. </h4>
 
  	Read:
 
@@ -258,8 +258,7 @@ Manual testing was undertaken for this application and satisfactorily passed. A 
 
     * When an issue is edited, the issue is saved is updated in the database and the page is redirected to 'My Issues' page where the issue is displayed. (Passed)
 
-   * Issue is  displayed on 'All Issues'  and My Issue pages.
-
+   
     Delete Issue:
 
     * When clicking on Delete button the issue is deleted from the database, and from the pages 'My Issues' and 'All Issues'. (Passed)
