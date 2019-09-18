@@ -46,19 +46,19 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h3> View details about the issues added: </h3> 
 
-<li> An authenticated can click on the issue hyperlink if he or she wishes to read about </li>
+<li> User can click on the issue hyperlink if he or she wishes to read about </li>
 
-<h3> Adding an issue:: </h3> 
+<h3> Adding an issue: </h3> 
 
 <li> Click on the button 'Add Issue' </li>
 <li> Fill out the form </li>
 
 <h3> User Edit Profile Page: Navigation bar > Edit Profile __ </h3>
 
-<h4> Editing an username , first and last name, email, change password </h4> 
+<h4> Editing a username if its not already registered, first and last name, email, change password </h4> 
 <li> User can change username , first and last name,  </li>
-<li> User can change email if its not allready registered  </li>
-<li> User can change password by cliking the  provided hyperlink </li>
+<li> User can change email if it's not already registered <li>
+<li> User can change the password by clicking the  provided hyperlink </li>
 
 <h3> Editing an issue: </h3> 
 
@@ -68,17 +68,17 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h3> Deleting an issue: </h3> 
 
-<li> Click on the issue that needs to be deleted</li>
+<li> Click on the issue that needs to be deleted. </li>
 <li> Click on the button 'Delete' </li>
 
 <h3> Buy a feature: </h3> 
 
 <li>  Click on the feature you want to buy </li>
-<li> Click on the button 'Add to cart'</li>
-<li>On the navigation bar click on 'Cart' </li>
-<li> The 'Cart' page displays your order </li>
-<li> Click on the button 'Checkout</li>
-<li>Review your order and fill out the form  </li> 
+<li> Click on the button 'Add to cart.'</li>
+<li> On the navigation bar, click on 'Cart.' </li>
+<li> The 'Cart' page displays your order. </li>
+<li> Click on the button 'Checkout. </li>
+<li> Review your order and fill out the form.</li> 
 
 <hr>
 
@@ -90,7 +90,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h2> Features </h2> 
 
-<li> User authentication - Signup, Login, Logout </li>
+<li> </li>
 
 <li> User Profile </li>
 
