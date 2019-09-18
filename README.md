@@ -55,9 +55,10 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h3> User Edit Profile Page: Navigation bar > Edit Profile __ </h3>
 
-<h4> Editing a username if its not already registered, first and last name, email, change password </h4> 
-<li> User can change username , first and last name,  </li>
-<li> User can change email if it's not already registered <li>
+<h4> Editing a username, first and last name, email, change password </h4> 
+
+<li> User can change username if its not already registered, first and last name,  </li>
+<li> User can change email if it's not already registered </li>
 <li> User can change the password by clicking the  provided hyperlink </li>
 
 <h3> Editing an issue: </h3> 
