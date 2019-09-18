@@ -91,7 +91,7 @@ It also allows users to perform CRUD (Create, Read, Update and Delete) on any is
 
 <h2> Features </h2> 
 
-<li> </li>
+<li> User authentication - Register, Login, Logout </li>
 
 <li> User Profile </li>
 
